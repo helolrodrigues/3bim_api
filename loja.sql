@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/08/2026 às 22:44
+-- Tempo de geração: 19/08/2026 às 22:54
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `loja`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `local` varchar(100) NOT NULL,
+  `data_evento` float NOT NULL,
+  `capacidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -46,6 +60,13 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `quantidade`) VALUES
 --
 
 --
+-- Índices de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ix_eventos_id` (`id`);
+
+--
 -- Índices de tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -55,6 +76,12 @@ ALTER TABLE `produtos`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
