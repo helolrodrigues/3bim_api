@@ -11,3 +11,20 @@ class ProdutoResponse(ProdutoBase):
     
 class Config:
     from_attributes = True
+
+
+
+class EventoBase(BaseModel):
+    nome: str
+    local: str
+    preco: float
+    data_evento: float
+    quantidade: int
+
+class EventoCreate(EventoBase):
+    pass
+class EventoResponse(EventoBase):
+    id: int
+    
+class Config:
+    from_attributes = True
